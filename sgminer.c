@@ -4246,14 +4246,17 @@ void write_config(FILE *fcfg)
 				case KL_DARKCOIN:
 					fprintf(fcfg, DARKCOIN_KERNNAME);
 					break;
-				case KL_QUBITCOIN:
-					fprintf(fcfg, QUBITCOIN_KERNNAME);
+				case KL_MYRIADCOIN_QUBIT:
+					fprintf(fcfg, MYRIADCOIN_QUBIT_KERNNAME);
 					break;
+				case KL_MYRIADCOIN_SKEIN:
+					fprintf(fcfg, MYRIADOIN_SKEIN_KERNNAME);
+					break
+				case KL_MYRIADCOIN_GROESTL:
+                                        fprintf(fcfg, MYRIADCOIN_GROESTL_KERNNAME);
+                                        break;
 				case KL_QUARKCOIN:
 					fprintf(fcfg, QUARKCOIN_KERNNAME);
-					break;
-				case KL_MYRIADCOIN_GROESTL:
-					fprintf(fcfg, MYRIADCOIN_GROESTL_KERNNAME);
 					break;
 				case KL_FUGUECOIN:
 					fprintf(fcfg, FUGUECOIN_KERNNAME);
@@ -6083,14 +6086,17 @@ static void rebuild_nonce(struct work *work, uint32_t nonce)
 		case KL_DARKCOIN:
 			darkcoin_regenhash(work);
 			break;
-		case KL_QUBITCOIN:
-			qubitcoin_regenhash(work);
-			break;
-		case KL_QUARKCOIN:
-			quarkcoin_regenhash(work);
+		case KL_MYRIADCOIN_QUBIT:
+			myriadcoin_qubit_regenhash(work);
 			break;
 		case KL_MYRIADCOIN_GROESTL:
-			myriadcoin_groestl_regenhash(work);
+                        myriadcoin_groestl_regenhash(work);
+                        break;
+		case KL_MYRIADCOIN_SKEIN:
+			myriadcoin_skein_regenhash(work);
+			break
+		case KL_QUARKCOIN:
+			quarkcoin_regenhash(work);
 			break;
 		case KL_FUGUECOIN:
 			fuguecoin_regenhash(work);

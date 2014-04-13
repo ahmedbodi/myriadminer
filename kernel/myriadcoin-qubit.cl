@@ -1,5 +1,5 @@
 /*
- * QubitCoin kernel implementation.
+ * MYRIADCOIN_QUBIT kernel implementation.
  *
  * ==========================(LICENSE BEGIN)============================
  *
